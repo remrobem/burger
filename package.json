@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/remrobem/burger/issues"
   },
-  "homepage": "https://github.com/remrobem/burger#readme"
+  "homepage": "https://github.com/remrobem/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
 }
