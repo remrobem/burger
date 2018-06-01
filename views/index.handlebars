@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+            <img src="public/assets/img/burger.png">
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="col-sm"></div>
+</div>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm"></div>
+    <div class="col-sm text-center">
+        <h3>Eat Da Burger, Baby!</h3>
+    </div>
+    <div class="col-sm"></div>
+</div>
+
+{{!-- display burgers --}} 
+{{#each burgers}} 
+<div class="row ">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3 justify-content-sm-right">
+        <p class="text-left"> 
+            {{#unless devoured}}          
+            {{id}}. {{burger_name}}  
+            {{/unless}}                              
+        </p>       
+    </div>
+    <div class="col-sm-2">
+         {{#unless devoured}}    
+        <button type="submit" class="btn btn-primary">Devour It!</button>
+         {{/unless}}  
+    </div>
+     <div class="col-sm-1"></div>
+     <div class="col-sm-3 justify-content-sm-right">
+        <p class="text-left">  
+            {{#if devoured}}         
+            {{id}}. {{burger_name}}  
+            {{/if}}                     
+        </p>
+       
+    </div>
+</div>
+ {{/each}} 
+
+{{!-- enter a new burger and submit --}}
+<div class="row justify-content-sm-center">
+    <div class="col-sm"></div>
+    <div class="col-sm text-center">
+        <form>
+            <div class="form-group">
+                <label for="newBurger"></label>
+                <textarea class="form-control" id="newBurger" rows="1"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <br>
+            <p>Enter a burger you want to eat and click the "Submit" button</p>
+        </form>
+    </div>
+    <div class="col-sm"></div>
+</div>

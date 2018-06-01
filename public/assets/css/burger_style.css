@@ -1,2 +1,19 @@
 /* #f6e051 */
 
+body {
+    background-color: yellow;
+}
+
+h3 {
+    color: red;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+p {
+    font-size: 10px;
+}

@@ -45,7 +45,7 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(ormResponse);
+            callback(result);
         });
     },
 
@@ -63,7 +63,7 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(ormResponse);
+            callback(result);
         });
     },
 
@@ -80,7 +80,7 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(ormResponse);
+            callback(result);
         });
     },
 
@@ -93,7 +93,7 @@ let orm = {
             if (err) {
                 throw err;
             }
-            callback(ormResponse);
+            callback(result);
         });
     },
 }

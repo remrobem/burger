@@ -20,7 +20,7 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   }
-  console.log("connected as id " + connection.threadId + "on port:" + connection.port);
+  console.log("connected as id " + connection.threadId);
 });
 
 // Export connection
