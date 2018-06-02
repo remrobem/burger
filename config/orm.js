@@ -50,8 +50,8 @@ let orm = {
     },
 
     insertOne: function (table, columns, values, callback) {
-        let queryString = "INSERT INTO" + table;
 
+        let queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += columns.toString();
         queryString += ") ";
@@ -68,34 +68,21 @@ let orm = {
     },
 
     // An example of objColVals would be {name: panther, sleepy: true}
-    update: function (table, columnValues, condition, callback) {
+    update: function (table, columnValue, condition, callback) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
-        queryString += objToSql(columns);
+        queryString += objToSql(columnValue);
         queryString += " WHERE ";
         queryString += condition;
-
+console.log(`update query: ${queryString}`)
         dbConnection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
             callback(result);
         });
-    },
-
-    delete: function (table, condition, callback) {
-        var queryString = "DELETE FROM " + table;
-        queryString += " WHERE ";
-        queryString += condition;
-
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            callback(result);
-        });
-    },
+    }
 }
 
 // Export the orm object for the model (cat.js).

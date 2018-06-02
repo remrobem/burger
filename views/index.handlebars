@@ -2,7 +2,7 @@
     <div class="row justify-content-sm-center">
         <div class="col-sm-5"></div>
         <div class="col-sm-2">
-            <img src="public/assets/img/burger.png">
+            <img src="/assets/img/burger.png">
         </div>
         <div class="col-sm-5"></div>
     </div>
@@ -20,27 +20,29 @@
 {{!-- display burgers --}} 
 {{#each burgers}} 
 <div class="row ">
+    <br><br>
     <div class="col-sm-1"></div>
     <div class="col-sm-3 justify-content-sm-right">
-        <p class="text-left"> 
-            {{#unless devoured}}          
-            {{id}}. {{burger_name}}  
-            {{/unless}}                              
-        </p>       
+         {{#unless devoured}}  
+        <p class="text-left form-control">                    
+            {{id}}. {{burger_name}}                                        
+        </p>  
+         {{/unless}}        
     </div>
     <div class="col-sm-2">
          {{#unless devoured}}    
-        <button type="submit" class="btn btn-primary">Devour It!</button>
+          <form method="POST" action="/devourBurger/{{id}}">          
+        <button type="submit"  class="btn btn-light">Devour It!</button>
+        </form>
          {{/unless}}  
     </div>
      <div class="col-sm-1"></div>
      <div class="col-sm-3 justify-content-sm-right">
-        <p class="text-left">  
-            {{#if devoured}}         
-            {{id}}. {{burger_name}}  
-            {{/if}}                     
+         {{#if devoured}} 
+        <p class="text-left form-control">                      
+            {{id}}. {{burger_name}}                                
         </p>
-       
+        {{/if}}  
     </div>
 </div>
  {{/each}} 
@@ -49,10 +51,9 @@
 <div class="row justify-content-sm-center">
     <div class="col-sm"></div>
     <div class="col-sm text-center">
-        <form>
+        <form method="POST" action="/createBurger">
             <div class="form-group">
-                <label for="newBurger"></label>
-                <textarea class="form-control" id="newBurger" rows="1"></textarea>
+                <textarea class="form-control" id="newBurger" name="newBurger" rows="1"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <br>

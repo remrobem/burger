@@ -13,8 +13,8 @@ var burger = {
     });
   },
 
-  devourBurger: function (columnValues, condition, callback) {
-    orm.update("burgers", columnValues, condition, function (ormResponse) {
+  devourBurger: function (columnValue, condition, callback) {
+    orm.update("burgers", columnValue, condition, function (ormResponse) {
       callback(ormResponse);
     });
   },
