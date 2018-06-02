@@ -17,44 +17,35 @@
     <div class="col-sm"></div>
 </div>
 
-{{!-- display burgers --}}
-<div class="container">
-    <div class="row ">
-
-        {{!-- not devoured list --}}
-        <div class="col-6">
-            {{#each burgers}} {{#unless devoured}}
-            <div class="row">
-                <div class="col-9">
-                    <p class="form-control">
-                        {{id}}. {{burger_name}}
-                    </p>
-                </div>                
-                <div class="col-3">
-                    <form method="POST" action="/devourBurger/{{id}}">
-                        <button type="submit" class="btn btn-primary">Devour It!</button>
-                    </form>
-                </div>
-            </div>
-            {{/unless}} {{/each}}
-        </div>
-
-
-
-
-
-        {{!-- devoured list --}}
-        <div class="col-6">
-            {{#each burgers}} {{#if devoured}}
-            <div class="col-10">
-                <p class="text-left form-control">
-                    {{id}}. {{burger_name}}
-                </p>
-            </div>
-            {{/if}} {{/each}}
-        </div>
+{{!-- display burgers --}} 
+{{#each burgers}} 
+<div class="row ">
+    <br><br>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3 justify-content-sm-right">
+         {{#unless devoured}}  
+        <p class="text-left form-control">                    
+            {{id}}. {{burger_name}}                                        
+        </p>  
+         {{/unless}}        
+    </div>
+    <div class="col-sm-2">
+         {{#unless devoured}}    
+          <form method="POST" action="/devourBurger/{{id}}">          
+        <button type="submit"  class="btn btn-light">Devour It!</button>
+        </form>
+         {{/unless}}  
+    </div>
+     <div class="col-sm-1"></div>
+     <div class="col-sm-3 justify-content-sm-right">
+         {{#if devoured}} 
+        <p class="text-left form-control">                      
+            {{id}}. {{burger_name}}                                
+        </p>
+        {{/if}}  
     </div>
 </div>
+ {{/each}} 
 
 {{!-- enter a new burger and submit --}}
 <div class="row justify-content-sm-center">
