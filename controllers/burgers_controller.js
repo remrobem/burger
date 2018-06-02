@@ -15,21 +15,24 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/api/createBurger", function (req, res) {
-    burger.createBurger(["burger_name", "devoured"], [req.body.burger_name, "false"], function (result) {
-        res.json({
-            id: result.insertId
-        });
+router.post("/createBurger", function (req, res) {
+    console.log(`in router post req.body: ${req.body}`)
+    burger.createBurger(["burger_name", "devoured"], [req.body.newBurger, 0], function (result) {
+        res.redirect("/");
     });
 });
 
-router.put("/api/devourBurger/:id", function (req, res) {
-   let condition = `id = ${req.params.id}`;
-    burger.devourBurger({devoured: "true"}, condition, function (result) {
+router.post("/devourBurger/:id", function (req, res) {
+    let condition = `id = ${req.params.id}`;
+    console.log(condition)
+    burger.devourBurger({
+        devoured: 1
+    }, condition, function (result) {
+        console.log(`result: ${result}`)
         if (result.changedRows == 0) {
-           return res.status(404).end();
+            return res.status(404).end();
         } else {
-            res.status(200).end();
+            res.redirect("/");
         }
     });
 });
