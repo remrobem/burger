@@ -1,4 +1,7 @@
+
 <div class="container-fluid">
+
+{{!-- burger image     --}}
     <div class="row justify-content-sm-center">
         <div class="col-sm-5"></div>
         <div class="col-sm-2">
@@ -9,6 +12,7 @@
     <div class="col-sm"></div>
 </div>
 
+{{!-- heading text --}}
 <div class="row justify-content-sm-center">
     <div class="col-sm"></div>
     <div class="col-sm text-center">
@@ -26,28 +30,24 @@
             {{#each burgers}} {{#unless devoured}}
             <div class="row">
                 <div class="col-9">
-                    <p class="form-control">
+                    <p class="form-control burger_name">
                         {{id}}. {{burger_name}}
                     </p>
                 </div>                
                 <div class="col-3">
                     <form method="POST" action="/devourBurger/{{id}}">
-                        <button type="submit" class="btn btn-primary">Devour It!</button>
+                        <button type="submit" class="btn btn-primary devourBtn">Devour It!</button>
                     </form>
                 </div>
             </div>
             {{/unless}} {{/each}}
         </div>
 
-
-
-
-
         {{!-- devoured list --}}
         <div class="col-6">
             {{#each burgers}} {{#if devoured}}
             <div class="col-10">
-                <p class="text-left form-control">
+                <p class="text-left form-control burger_name">
                     {{id}}. {{burger_name}}
                 </p>
             </div>

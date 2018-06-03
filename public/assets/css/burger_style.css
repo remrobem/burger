@@ -1,5 +1,5 @@
 body {
-    background-color: yellow;
+    background-color: rgb(223, 156, 69);
 }
 
 h3 {
@@ -14,4 +14,22 @@ img {
 
 p {
     font-size: 10px;
+}
+
+@media (max-width: 780px) {
+    .devourBtn {
+        font-size: 80%;
+    }
+    .burger_name {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 435px) {
+    .devourBtn {
+        font-size: 60%;
+    }
+    .burger_name {
+        font-size: 60%;
+    }
 }
